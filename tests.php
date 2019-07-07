@@ -37,5 +37,11 @@ class FunctionTest extends TestCase
 
         $conf_php = config('php_version');
         $this->assertSame($conf_php, '7.1');
+
+        $conf_php_module = config('php_modules');
+        $this->assertArraySubset(['mysqli', 'gd'], $conf_php_module);
+
+        $conf_mariadb = config('mariadb_version');
+        $this->assertSame($conf_mariadb, '10.1');
     }
 }

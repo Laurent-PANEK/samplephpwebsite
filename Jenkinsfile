@@ -4,7 +4,7 @@ pipeline {
         cron 'H/60 * * * *'
     }
     environment {
-        LATEST_VERSION = '2'
+        LATEST_VERSION = '3'
         HUB_CREDS = credentials('hub-creds')
     }
     stages {
@@ -40,18 +40,20 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "docker build -t laurentpanek/samplephpwebsite:$LATEST_VERSION -t laurentpanek/samplephpwebsite:$LATEST_VERSION.$BUILD_NUMBER ."
+                sh "docker build -t laurentpanek/samplephpwebsite:latest -t laurentpanek/samplephpwebsite:$LATEST_VERSION -t laurentpanek/samplephpwebsite:$LATEST_VERSION.$BUILD_NUMBER ."
             }
         }
         stage('Push') {
             steps {
                 sh "docker login -u $HUB_CREDS_USR -p $HUB_CREDS_PSW"
+                sh "docker push laurentpanek/samplephpwebsite:latest"
                 sh "docker push laurentpanek/samplephpwebsite:$LATEST_VERSION"
                 sh "docker push laurentpanek/samplephpwebsite:$LATEST_VERSION.$BUILD_NUMBER"
             }
         }
         stage('Clean') {
             steps {
+                sh "docker image rm -f laurentpanek/samplephpwebsite:latest"
                 sh "docker image rm -f laurentpanek/samplephpwebsite:$LATEST_VERSION"
                 sh "docker image rm -f laurentpanek/samplephpwebsite:$LATEST_VERSION.$BUILD_NUMBER"
             }
