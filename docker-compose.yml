@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - 20001:80
+    depends_on:
+      - php
+    networks:
+      - samplephpwebsite_v1
+  php:
+    build: .
+    networks:
+      - samplephpwebsite_v1
+
+networks:
+  samplephpwebsite_v1:
+    driver: bridge
