@@ -1,11 +1,11 @@
 # Sample PHP Website
 
-[![Build Status](https://jenkins.laurentpanek.me/buildStatus/icon?job=samplephpwebsite%2Fv1)](https://jenkins.laurentpanek.me/job/samplephpwebsite/job/v1/)
+[![Build Status](https://jenkins.laurentpanek.me/buildStatus/icon?job=samplephpwebsite%2Fv2)](https://jenkins.laurentpanek.me/job/samplephpwebsite/job/v2/)
 
 ## Informations
 
 - [See Jenkins jobs](https://jenkins.laurentpanek.me/job/samplephpwebsite)
-- [Demo](http://v1.samplephpwebsite.laurentpanek.me/)
+- [Demo](http://v2.samplephpwebsite.laurentpanek.me/)
 - [Dockerhub](https://hub.docker.com/r/laurentpanek/samplephpwebsite)
 
 ## Requirements

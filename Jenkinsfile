@@ -4,14 +4,14 @@ pipeline {
         cron 'H/60 * * * *'
     }
     environment {
-        LATEST_VERSION = '1'
+        LATEST_VERSION = '2'
         HUB_CREDS = credentials('hub-creds')
     }
     stages {
         stage('Install & Check') {
             agent {
                 docker {
-                    image 'php:7.0'
+                    image 'php:7.1'
                     reuseNode true
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
                 echo 'Install PHPUnit'
                 sh 'apt-get update'
                 sh 'apt-get install -y wget'
-                sh 'wget -O phpunit https://phar.phpunit.de/phpunit-6.phar'
+                sh 'wget -O phpunit https://phar.phpunit.de/phpunit-7.phar'
                 sh 'chmod +x phpunit'
                 echo 'Check version'
                 sh 'php -v'
@@ -30,7 +30,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'php:7.0'
+                    image 'php:7.1'
                     reuseNode true
                 }
             }

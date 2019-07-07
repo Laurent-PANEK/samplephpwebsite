@@ -6,16 +6,16 @@ services:
       context: .
       dockerfile: Dockerfile-nginx
     ports:
-      - 20001:80
+      - 20002:80
     depends_on:
       - php
     networks:
-      - samplephpwebsite_v1
+      - samplephpwebsite_v2
   php:
     build: .
     networks:
-      - samplephpwebsite_v1
+      - samplephpwebsite_v2
 
 networks:
-  samplephpwebsite_v1:
+  samplephpwebsite_v2:
     driver: bridge

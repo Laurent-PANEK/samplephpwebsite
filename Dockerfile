@@ -1,3 +1,3 @@
-FROM php:7.0-fpm
+FROM php:7.1-fpm
 RUN mkdir /app
 COPY . /app

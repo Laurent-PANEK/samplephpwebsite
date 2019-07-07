@@ -7,4 +7,4 @@ docker-compose down || true
 docker-compose up -d
 
 # Open browser to check app
-echo 'Check application at http://localhost:20001'
+echo 'Check application at http://localhost:20002'

@@ -29,4 +29,13 @@ class FunctionTest extends TestCase
         $this->expectOutputString($output);
         siteVersion();
     }
+
+    public function testCheckRequiredVersions()
+    {
+        $conf_nginx = config('nginx_version');
+        $this->assertSame($conf_nginx, 'nginx/1.12');
+
+        $conf_php = config('php_version');
+        $this->assertSame($conf_php, '7.1');
+    }
 }
