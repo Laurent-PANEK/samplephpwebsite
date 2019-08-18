@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    triggers {
-        cron 'H/60 * * * *'
-    }
     environment {
         LATEST_VERSION = '1'
         HUB_CREDS = credentials('hub-creds')
