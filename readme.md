@@ -4,8 +4,8 @@
 
 ## Informations
 
-- [See Jenkins jobs](https://jenkins.laurentpanek.me/job/samplephpwebsite)
-- [Demo](http://v1.samplephpwebsite.laurentpanek.me/)
+> Job build history and demo website has been archived and removed plublicy
+
 - [Dockerhub](https://hub.docker.com/r/laurentpanek/samplephpwebsite)
 
 ## Requirements
